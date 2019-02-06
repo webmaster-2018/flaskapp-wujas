@@ -14,12 +14,20 @@ class BazaModel(Model):
         database = baza
 
 
+class Klasa(BazaModel):
+    pass
+
+
 class Uczen(BazaModel):
     pass
 
 
-class Klasa(BazaModel):
-    pass
+def main(args):
+    # Uwaga: po utworzeniu modeli uruchom plik modele.py
+    # jeden raz w środowisku z zainstalowaną biblioteką peewee:
+    # python modele.py
+    baza.connect()
+    baza.create_tables([Klasa, Uczen])
 
 
 if __name__ == '__main__':
